@@ -4,6 +4,7 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ChevronDownIcon } from "@heroicons/react/16/solid";
 import { TermsModal } from "../components/terminosModal";
+import Documento from '../assets/AUTORIZACION DE PARTICIOPACION.pdf' 
 
 const validationSchema = z.object({
   username: z.string().min(8, "numero de caracteres minimos 8"),
@@ -152,6 +153,8 @@ La participación implica la aceptación integra de las términos y condiciones 
           <TermsModal text={termsText} onAccept={handleAccept} />
         </div>
         {errors.terminos && <span>{errors.terminos.message}</span>}
+        <br />
+        <a href={Documento} download={''} className="btnDownload rounded-md bg-zinc-600 hover:bg-indigo-500 px-3 py-1 text-sm">Descargar archivo de Autorizacion</a>
         <br />
         <button
           type="submit"
